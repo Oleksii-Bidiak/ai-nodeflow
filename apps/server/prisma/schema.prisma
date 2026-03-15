@@ -5,8 +5,8 @@
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
 generator client {
-  provider = "prisma-client"
-  output   = "../generated/prisma"
+  provider     = "prisma-client-js"
+  // output       = "../src/prisma/generated/prisma"
 }
 
 datasource db {
@@ -20,5 +20,5 @@ model User {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  @@map("users") // Це хороша практика: називати таблиці в БД у множині та з маленької літери
+  @@map("users")
 }
