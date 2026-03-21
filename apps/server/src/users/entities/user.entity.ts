@@ -11,7 +11,7 @@ export class UserEntity implements User {
   @ApiProperty({ example: 'user@ai-nodeflow.com' })
   email: string;
 
-  @ApiPropertyOptional({ example: 'Олексій', nullable: true })
+  @ApiPropertyOptional({ example: 'Олексій', nullable: true, type: String })
   name: string | null;
 
   @ApiProperty({ description: 'Creation time' })
