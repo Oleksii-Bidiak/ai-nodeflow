@@ -1,4 +1,4 @@
-import { baseApi as api } from './baseApi';
+import { baseApi as api } from "./baseApi";
 const injectedRtkApi = api.injectEndpoints({
   endpoints: (build) => ({
     usersControllerCreate: build.mutation<
@@ -7,7 +7,7 @@ const injectedRtkApi = api.injectEndpoints({
     >({
       query: (queryArg) => ({
         url: `/users`,
-        method: 'POST',
+        method: "POST",
         body: queryArg.createUserDto,
       }),
     }),
@@ -29,7 +29,7 @@ const injectedRtkApi = api.injectEndpoints({
     >({
       query: (queryArg) => ({
         url: `/users/${queryArg.id}`,
-        method: 'PATCH',
+        method: "PATCH",
         body: queryArg.updateUserDto,
       }),
     }),
@@ -37,7 +37,7 @@ const injectedRtkApi = api.injectEndpoints({
       UsersControllerRemoveApiResponse,
       UsersControllerRemoveApiArg
     >({
-      query: (queryArg) => ({ url: `/users/${queryArg.id}`, method: 'DELETE' }),
+      query: (queryArg) => ({ url: `/users/${queryArg.id}`, method: "DELETE" }),
     }),
   }),
   overrideExisting: false,
@@ -68,7 +68,7 @@ export type UserEntity = {
   /** Unique identefier */
   id: string;
   email: string;
-  name?: object | null;
+  name?: string | null;
   /** Creation time */
   createdAt: string;
   /** Last updated time */
@@ -78,7 +78,7 @@ export type CreateUserDto = {
   /** User's email */
   email: string;
   /** User's name (optional) */
-  name: string;
+  name?: string;
 };
 export type UpdateUserDto = {};
 export const {
