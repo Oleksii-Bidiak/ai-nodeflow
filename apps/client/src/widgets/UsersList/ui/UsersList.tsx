@@ -17,17 +17,14 @@ export const UsersList = () => {
   }
 
   return (
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        gap: '1rem',
-        padding: '1rem',
-      }}>
-      <h2>Users list</h2>
-      {users.map((user) => (
-        <UserCard key={user.id} user={user} />
-      ))}
+    <div className="p-6">
+      <h2 className="text-2xl font-bold mb-6 tracking-tight">Users list</h2>
+
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {users.map((user) => (
+          <UserCard key={user.id} user={user} />
+        ))}
+      </div>
     </div>
   );
 };
